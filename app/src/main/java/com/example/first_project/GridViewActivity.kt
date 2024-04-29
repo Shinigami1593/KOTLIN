@@ -9,6 +9,8 @@ import androidx.core.view.WindowInsetsCompat
 
 class GridViewActivity : AppCompatActivity() {
     lateinit var gridView : GridView
+    var nameList = ArrayList<String>()
+    var imageList = ArrayList<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +18,15 @@ class GridViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_grid_view)
 
         gridView = findViewById(R.id.grid)
+        nameList.add("Bike")
+        nameList.add("Cycle")
+        nameList.add("Scooter")
+
+        imageList.add(R.drawable.bike)
+        imageList.add(R.drawable.cycle)
+        imageList.add(R.drawable.scooter)
+
+
 
 
     }
