@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.TextView
 import com.example.first_project.R
 
 class TwoWheelersAdapter(var nameList: ArrayList<String>,
@@ -22,11 +24,15 @@ class TwoWheelersAdapter(var nameList: ArrayList<String>,
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view : View = LayoutInflater.from(parent?.context).inflate(
-            R.layout.sample,parent,
-            false)
+            R.layout.sample,
+            parent, false)
 
-        
+        var image : ImageView = view.findViewById(R.id.imageView)
+        var label :TextView = view.findViewById(R.id.textView3)
+
+        label.text = nameList[position]
+        image.setImageResource(imageList[position])
+
+        return view;
     }
-
-
 }
