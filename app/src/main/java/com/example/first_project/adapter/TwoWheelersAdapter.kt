@@ -35,4 +35,5 @@ class TwoWheelersAdapter(var nameList: ArrayList<String>,
 
         return view;
     }
+
 }
