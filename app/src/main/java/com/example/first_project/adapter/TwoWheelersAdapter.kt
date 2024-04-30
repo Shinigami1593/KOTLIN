@@ -4,7 +4,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 
-class TwoWheelersAdapter : BaseAdapter() {
+class TwoWheelersAdapter(var nameList: ArrayList<String>,
+                         var imageList: ArrayList<Int>) : BaseAdapter() {
     override fun getCount(): Int {
         TODO("Not yet implemented")
     }
@@ -20,4 +21,6 @@ class TwoWheelersAdapter : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         TODO("Not yet implemented")
     }
+
+
 }
