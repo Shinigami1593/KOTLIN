@@ -5,6 +5,22 @@
       <entry key="MainActivity">
         <State />
       </entry>
+      <entry key="Message">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\Asus\.android\avd\Pixel_3a_API_28.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-05-05T06:44:29.585592900Z" />
+        </State>
+      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>

@@ -1,29 +1,25 @@
 package com.example.first_project
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class FirstActivity : AppCompatActivity() {
-    lateinit var button : Button
+class MainActivity6 : AppCompatActivity() {
+    lateinit var textView: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_first)
+        setContentView(R.layout.activity_main6)
+        textView = findViewById(R.id.textView6)
 
-        button = findViewById(R.id.navigate)
-        button.setOnClickListener{
-            var intent = Intent(this@FirstActivity,
-                MainActivity6::class.java)
+        var data : String? = intent.getStringExtra("email")
 
-            startActivity(intent)
-        }
-
-
+        textView.text = "You have entered $data"
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

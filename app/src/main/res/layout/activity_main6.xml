@@ -5,16 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstActivity">
+    tools:context=".MainActivity6">
 
-    <Button
-        android:id="@+id/navigate"
-        android:layout_width="247dp"
-        android:layout_height="65dp"
-        android:text="Navigate to new window"
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="231dp"
+        android:layout_height="90dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
+        app:layout_constraintVertical_bias="0.48" />
 </androidx.constraintlayout.widget.ConstraintLayout>

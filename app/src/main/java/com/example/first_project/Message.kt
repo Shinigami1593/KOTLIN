@@ -1,29 +1,31 @@
 package com.example.first_project
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.CheckBox
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.first_project.databinding.ActivityMessageBinding
 
-class FirstActivity : AppCompatActivity() {
-    lateinit var button : Button
+class Message : AppCompatActivity() {
+    lateinit var messageBinding: ActivityMessageBinding
+    var counter = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_first)
+        setContentView(R.layout.activity_message)
 
-        button = findViewById(R.id.navigate)
-        button.setOnClickListener{
-            var intent = Intent(this@FirstActivity,
-                MainActivity6::class.java)
+        messageBinding = ActivityMessageBinding.inflate(layoutInflater)
+        var view = messageBinding.root
+        setContentView(view)
 
-            startActivity(intent)
+//        messageBinding.main
+        messageBinding.btn.setOnClickListener{
+            counter++
+            messageBinding.btn.text = counter.toString()
+
         }
-
-
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
