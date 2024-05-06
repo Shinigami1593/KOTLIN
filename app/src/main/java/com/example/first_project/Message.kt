@@ -1,6 +1,8 @@
 package com.example.first_project
 
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
 import android.widget.CheckBox
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -33,5 +35,36 @@ class Message : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+
+    override fun onStart() {
+        Log.d("Message","onStart called")
+        super.onStart()
+    }
+
+    override fun onPause() {
+        Log.d("Message","onPause called")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d("Message","onStop called")
+        super.onStop()
+    }
+
+    override fun onResume() {
+        Log.d("Message","onResume called")
+        super.onResume()
+    }
+
+    override fun onDestroy() {
+        Log.d("Message","onDestroy called")
+        super.onDestroy()
+    }
+
+    override fun onRestart() {
+        Log.d("Message","onRestart called")
+        super.onRestart()
     }
 }
