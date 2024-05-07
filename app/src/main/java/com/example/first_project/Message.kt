@@ -79,11 +79,23 @@ class Message : AppCompatActivity() {
 
     override fun onResume() {
         Log.d("Message","onResume called")
+        sharedPreferences = getSharedPreferences("userdata", MODE_PRIVATE)
+        username = sharedPreferences.getString("username","")
+        message = sharedPreferences.getString("message","")
+        remember = sharedPreferences.getBoolean("remember",false)
+        counter = sharedPreferences.getInt("remember",0)
+
+        messageBinding.username.setText(username)
+        messageBinding.message.setText(message)
+        messageBinding.checkBox.isChecked = remember
+        messageBinding.btn.text = counter.toString()
+
         super.onResume()
     }
 
     override fun onDestroy() {
         Log.d("Message","onDestroy called")
+
         super.onDestroy()
     }
 
