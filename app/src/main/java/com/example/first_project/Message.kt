@@ -1,9 +1,11 @@
 package com.example.first_project
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.widget.CheckBox
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,6 +14,11 @@ import com.example.first_project.databinding.ActivityMessageBinding
 
 class Message : AppCompatActivity() {
     lateinit var messageBinding: ActivityMessageBinding
+    lateinit var sharedPreferences: SharedPreferences
+
+    var username : String? = null
+    var message : String? = null
+    var remember : Boolean = false
     var counter = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +52,23 @@ class Message : AppCompatActivity() {
 
     override fun onPause() {
         Log.d("Message","onPause called")
+        sharedPreferences = getSharedPreferences("userdata", MODE_PRIVATE)
+
+        username = messageBinding.username.text.toString()
+        message = messageBinding.message.text.toString()
+        remember = messageBinding.checkBox.isChecked
+
+        var editor =sharedPreferences.edit()
+        editor.putString("username", username)
+        editor.putString("message", message)
+        editor.putBoolean("remember", remember)
+        editor.putInt("counter", counter)
+
+        editor.apply()
+
+        Toast.makeText(applicationContext,"Data Saved",Toast.LENGTH_LONG).show()
+
+
         super.onPause()
     }
 
